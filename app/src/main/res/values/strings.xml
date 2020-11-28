@@ -2,4 +2,8 @@
     <string name="app_name">Prueba</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="FirstName">FirstName</string>
+    <string name="LastName">Last name</string>
+    <string name="Age">Age</string>
+    <string name="Add">Add</string>
 </resources>
