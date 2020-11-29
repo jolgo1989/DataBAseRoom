@@ -5,6 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.android.parcel.Parcelize
 
+//Metodo para actualizar
 @Parcelize
 @Entity(tableName = "user_table")
 data class User(

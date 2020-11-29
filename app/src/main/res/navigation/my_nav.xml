@@ -8,19 +8,34 @@
     <fragment
         android:id="@+id/listFragment"
         android:name="com.example.prueba.ListFragment"
-        android:label="fragment_list"
+        android:label="List"
         tools:layout="@layout/fragment_list" >
         <action
             android:id="@+id/action_listFragment_to_addFragment"
             app:destination="@id/addFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_upDateFragment"
+            app:destination="@id/upDateFragment" />
     </fragment>
     <fragment
         android:id="@+id/addFragment"
         android:name="com.example.prueba.AddFragment"
-        android:label="fragment_add"
+        android:label="Add User"
         tools:layout="@layout/fragment_add" >
         <action
             android:id="@+id/action_addFragment_to_listFragment"
             app:destination="@id/listFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/upDateFragment"
+        android:name="com.example.prueba.UpDateFragment"
+        android:label="Update User"
+        tools:layout="@layout/fragment_up_date" >
+        <action
+            android:id="@+id/action_upDateFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+        <argument
+            android:name="CurrentUser"
+            app:argType="com.example.prueba.data.User" />
     </fragment>
 </navigation>

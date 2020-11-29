@@ -3,7 +3,7 @@ package com.example.prueba
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Adapter
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.prueba.data.User
 import kotlinx.android.synthetic.main.custom_row.view.*
@@ -28,13 +28,12 @@ class ListAdapter: RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
         holder.itemView.textViewLastName.text = currentItem.lastName
         holder.itemView.textViewAge.text = currentItem.age.toString()
 
-        /*
+        //Metodo para actualizar información del usuario (cuando demos click en el recycler view se mantenga la información)
         holder.itemView.rowLayout.setOnClickListener {
-            val action = ListFragmentDirections.actionListFragmentToUpdateFragment(currentItem)
+            val action = ListFragmentDirections.actionListFragmentToUpDateFragment(currentItem)
             holder.itemView.findNavController().navigate(action)
         }
 
-         */
     }
 
     fun setData(user: List<User>){
