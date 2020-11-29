@@ -6,4 +6,8 @@
     <string name="LastName">Last name</string>
     <string name="Age">Age</string>
     <string name="Add">Add</string>
+    <string name="CustomNumber">1</string>
+    <string name="CustomeFirstName">Jorge L</string>
+    <string name="CustomeLastName">Gamarra O</string>
+    <string name="CustomeAge">(31)</string>
 </resources>
