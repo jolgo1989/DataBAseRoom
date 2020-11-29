@@ -1,7 +1,6 @@
 package com.example.prueba
 
 import android.os.Bundle
-import android.text.Editable
 import android.text.TextUtils
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -13,7 +12,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.prueba.data.User
 import com.example.prueba.data.UserViewModel
-import kotlinx.android.synthetic.main.fragment_add.view.*
 import kotlinx.android.synthetic.main.fragment_up_date.*
 import kotlinx.android.synthetic.main.fragment_up_date.view.*
 
@@ -48,11 +46,10 @@ class UpDateFragment : Fragment() {
     private fun updateItem(){
         val firstName = textInputUpDateFirstName.editText?.text.toString()
         val lastName = textInputUpDateLastName.editText?.text.toString()
-        val age = Integer.parseInt(updateAge_et.text.toString())
-
-        if(inputCheck(firstName, lastName, updateAge_et.text)){
+        val age = textInputUpDateAge.editText?.text.toString()
+        if(inputCheck(firstName, lastName, age)){
             // Create User Object
-            val updatedUser = User(args.currentUser.id, firstName, lastName, age)
+            val updatedUser = User(args.CurrentUser.id, firstName, lastName, age)
             // Update Current User
             mUserViewModel.updateUser(updatedUser)
             Toast.makeText(requireContext(), "Updated Successfully!", Toast.LENGTH_SHORT).show()
@@ -63,10 +60,9 @@ class UpDateFragment : Fragment() {
         }
     }
 
-    private fun inputCheck(firstName: String, lastName: String, age: Editable): Boolean{
+    private fun inputCheck(firstName: String, lastName: String, age: String): Boolean{
         return !(TextUtils.isEmpty(firstName) && TextUtils.isEmpty(lastName) && age.isEmpty())
     }
-
 
 }
 

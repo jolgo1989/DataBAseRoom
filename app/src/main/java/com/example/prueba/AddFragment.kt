@@ -37,7 +37,7 @@ class AddFragment : Fragment() {
 
     private fun insertDataToDatabase() {
         val firstName = textInputAddFirstName.editText?.text.toString()
-        val lastName = textInputAddFirstName.editText?.text.toString()
+        val lastName = textInputAddLastName.editText?.text.toString()
         val age = textInputAddAge.editText?.text.toString()
 
         if(inputCheck(firstName, lastName, age)){
@@ -45,8 +45,7 @@ class AddFragment : Fragment() {
             val user = User(
                 0,
                 firstName,
-                lastName,
-                Integer.parseInt(age.toString())
+                lastName,age
             )
             // Add Data to Database
             mUserViewModel.addUser(user)
@@ -65,13 +64,3 @@ class AddFragment : Fragment() {
 
 
 }
-/*
-override fun onCreateView(
-    inflater: LayoutInflater, container: ViewGroup?,
-    savedInstanceState: Bundle?
-): View? {
-    // Inflate the layout for this fragment
-    return inflater.inflate(R.layout.fragment_add, container, false)
-}
-
- */
