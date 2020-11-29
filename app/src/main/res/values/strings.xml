@@ -10,4 +10,8 @@
     <string name="CustomeFirstName">Jorge L</string>
     <string name="CustomeLastName">Gamarra O</string>
     <string name="CustomeAge">(31)</string>
+    <string name="ButtonUpDate">Up date</string>
+    <string name="UpDateFirstName">First name</string>
+    <string name="UpDateLastName">Last name</string>
+    <string name="UpDateAge">Age</string>
 </resources>
