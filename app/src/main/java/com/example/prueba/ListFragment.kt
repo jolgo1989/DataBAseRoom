@@ -1,10 +1,10 @@
 package com.example.prueba
 
+import android.app.AlertDialog
 import android.os.Bundle
+import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -40,8 +40,35 @@ class ListFragment : Fragment() {
             findNavController().navigate(R.id.action_listFragment_to_addFragment)
         }
 
+        //Add Menu
+        setHasOptionsMenu(true)
         return view
     }
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.dele_menu,menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.itemDele)
+
+            deleteAllUser()
+
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun deleteAllUser() {
+        val builder =  AlertDialog.Builder(requireContext())
+        builder.setPositiveButton("Yes"){_,_,->
+
+            mUserViewModel.deleteAllUsers()
+            Toast.makeText(context, "Successfuly remove everything", Toast.LENGTH_SHORT).show()
+
+        }
+        builder.setNegativeButton("No",){_,_,-> }
+        builder.setTitle("Delte everything")
+        builder.setMessage("Are you sure you want to delete everrything")
+        builder.create().show()
+    }
 
 }

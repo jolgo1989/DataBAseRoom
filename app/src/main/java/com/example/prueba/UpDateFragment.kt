@@ -75,6 +75,7 @@ class UpDateFragment : Fragment() {
         }
         return super.onOptionsItemSelected(item)
     }
+
     private  fun deleteUser(){
         val builder =  AlertDialog.Builder(requireContext())
         builder.setPositiveButton("Yes"){_,_,->
